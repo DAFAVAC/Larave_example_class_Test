@@ -17,7 +17,7 @@ class CreateLocationsTable extends Migration
             $table->id();
             $table->string('country');
             $table->timestamps();
-            $table->bigInteger('id_perfil');
+            $table->bigInteger('id_perfil')->nullable();
             $table->foreign('id_perfil')->references('id')->on('perfils')->onDelete('cascade')->onUpdate('cascade');
 
         });

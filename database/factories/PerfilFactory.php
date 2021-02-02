@@ -21,9 +21,14 @@ class PerfilFactory extends Factory
      */
     public function definition()
     {
+        
+             
         return [
-            'nombre'=>$faker->userName
+            'name'=>$this->faker->name,
+            'descripcion'=>$this->faker->name,
+            'user_id'=> 1,
         ];
+        
     }
     
 }

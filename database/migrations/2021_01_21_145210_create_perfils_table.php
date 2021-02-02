@@ -16,8 +16,8 @@ class CreatePerfilsTable extends Migration
         Schema::create('perfils', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->bigInteger('user_id')->unsigned();
-            $table->string('nombre')->nullable();
+            $table->bigInteger('user_id')->nullable()->unsigned();
+            $table->string('name')->nullable();
             $table->string('descripcion')->nullable();
             $table->foreign('user_id')->references('id')->on('users')
                                         ->onDelete('cascade')
