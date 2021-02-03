@@ -22,8 +22,8 @@ class LocationFactory extends Factory
     public function definition()
     {
         return [
-            'country'=>$this->faker->name,
-            'id_perfil'=> 1,
+            'country'=>$this->faker->name
+            
         ];
     }
 }

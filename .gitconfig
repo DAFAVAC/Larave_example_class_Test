@@ -1,0 +1,8 @@
+[user]
+	name = DAFAVAC
+	email = dfc.vacas@yavirac.edu.ec
+[color]
+	status = auto
+	branch = auto
+	diff = auto
+	interactive = auto

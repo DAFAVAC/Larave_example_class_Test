@@ -15,10 +15,10 @@ class CreateLocationsTable extends Migration
     {
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
-            $table->string('country');
+            $table->string('country')->nullable();
             $table->timestamps();
-            $table->bigInteger('id_perfil')->nullable();
-            $table->foreign('id_perfil')->references('id')->on('perfils')->onDelete('cascade')->onUpdate('cascade');
+            $table->bigInteger('perfil_id')->nullable();
+            $table->foreign('perfil_id')->references('id')->on('perfils')->onDelete('cascade')->onUpdate('cascade');
 
         });
     }
