@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LevelController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +16,12 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::get("testLevel","App\Http\Controllers\LevelController@index");
+Route::post("testLevelPost","App\Http\Controllers\LevelController@store");
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get("testUser","App\Http\Controllers\UserController@index");
+Route::post("testUserPost","App\Http\Controllers\UserController@store");
+
+
+Route::get("testGroup","App\Http\Controllers\GroupController@index");
+Route::post("testGroupPost","App\Http\Controllers\GroupController@store");

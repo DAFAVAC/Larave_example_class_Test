@@ -18,64 +18,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Group::factory()->count(50)->create();
-        Level::factory()->create(['name'=>'Plata']);
-        Level::factory()->create(['name'=>'Oro']);
-        Level::factory()->create(['name'=>'Bronce']);
-
-
-        Perfil::factory()->count(50)->create();
-        User::factory(5)->create()->each(function($user){
+        \App\Models\Group::factory(3)->create(); 
+        \App\Models\Level::factory()->create(['name'=>'Oro']);
+        \App\Models\Level::factory()->create(['name'=>'Bronce']);
+        \App\Models\Level::factory()->create(['name'=>'Plata']);
+        \App\Models\User::factory(5)->create()->each(function($user){
             $perfil=$user->perfil()->save(\App\Models\Perfil::make());
             $perfil->location()->save(\App\Models\Location::make());
             $user->groups()->attach($this->array(rand(1,3)));
         });
-
-
-
-
-
-
-/*
-        Perfil::factory()->create(['name'=>'Perfil1','user_id'=>'1']);
-        Perfil::factory()->create(['name'=>'Perfil2','user_id'=>'2']);
-        Perfil::factory()->create(['name'=>'Perfil3','user_id'=>'3']);
-        
-        Location::factory()->create(['country'=>'Ecuador']);
-        Location::factory()->create(['country'=>'Colombia']);
-        Location::factory()->create(['country'=>'Chile']);
-
-*/
-
-//////////////////////////////
-/*
-        User::factory()->count(50)->create()->each(function($user){
-
-            $perfil= $user->perfil()->save(Perfil::factory()->create()->make());
-
-                $perfil->location()->save(Location::factory()->create()->make());
-
-                $user->group()->attach($this->array(rand(1,3)));
-
-
-        });
-
-
-*/
-
-////////////////////////////////////
-
-
-
-
     }
-
-
-
-
-
-
-
 
     public function array($max)
     {
@@ -85,7 +37,5 @@ class DatabaseSeeder extends Seeder
        }
        return $values;
     }
-
-
 
 }
